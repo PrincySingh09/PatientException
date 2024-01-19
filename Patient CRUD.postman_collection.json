@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "f1950cd8-6969-434e-9aa2-b8c9ed691d53",
+		"name": "Patient CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21244803"
+	},
+	"item": [
+		{
+			"name": "get_all_patients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create patient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dateOfBirth\":\"1999-09-24\",\n    \"firstName\":\"princy\",\n    \"lastName\":\"singh\",\n    \"gender\": \"female\",\n    \"patientRelations\" :\n    {\n        \"clinicalInfo\":\n        {\n            \"allergies\":\n            [\n                {\n                   \"category\":\"food allergies\",\n                   \"clinical_status\":\"working\",\n                   \"severity\":\"normal\"\n                }\n            ],\n            \"height\":\"5 feet 11 inch\",\n            \"weight\":\"72 kg\"\n        },\n        \"insurance\":{\n            \"bin\" : \"abc\",\n            \"firstName\":\"princy\",\n            \"lastName\":\"singh\"\n        },\n        \"prescriber\":\n        {\n            \"npi\": \"12332\",\n            \"firstName\":\"khushi\",\n            \"lastName\":\"singh\",\n            \"title\":\"doctor\"\n        },\n         \"prescription\": [\n        {\n        \"ndc\": \"abc123\",\n        \"rxNumber\": \"456\",\n        \"strength\": \"mg\",\n        \"strength_units\": 500,\n        \"supply\": \"4\",\n        \"refills\": \"32\"\n    }\n    ],\n        \"contacts\":\n        [\n            {\n                \"type\":\"email\",\n                \"value\":\"princy@gmail.com\"\n\n            },\n            {\n                \"type\":\"number\",\n                \"value\":\"9399223432\"\n            }\n        ],\n        \"address\":[\n            {\n                \"type\":\"home\",\n                \"line1\":\"dewas \",\n                \"line2\":\"hello\",\n                \"city\":\"dewas\",\n                \"zip_code\":\"34323\",\n                \"state_code\":\"21\"\n            }\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/patients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete patient",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/patients/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"patients",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update patient",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dateOfBirth\":\"1999-09-24\",\n    \"firstName\":\"princyUpdated\",\n    \"lastName\":\"singhUpdated\",\n    \"gender\": \"female\",\n    \"patientRelations\" :\n    {\n        \"clinicalInfo\":\n        {\n            \"allergies\":\n            [\n                {\n                   \"category\":\"smell allergies\",\n                   \"clinical_status\":\"working\",\n                   \"severity\":\"normal\"\n                }\n            ],\n            \"height\":\"5 feet 11 inch\",\n            \"weight\":\"72 kg\"\n        },\n        \"insurance\":{\n            \"bin\" : \"abc1234\",\n            \"firstName\":\"princy\",\n            \"lastName\":\"singh\"\n        },\n        \"prescriber\":\n        {\n            \"npi\": \"1233223\",\n            \"firstName\":\"khushi\",\n            \"lastName\":\"singh\",\n            \"title\":\"doctor\"\n        },\n         \"prescription\": [\n        {\n        \"ndc\": \"abc12323\",\n        \"rxNumber\": \"452326\",\n        \"strength\": \"mg\",\n        \"strength_units\": 500,\n        \"supply\": \"4\",\n        \"refills\": \"32\"\n    }\n    ],\n        \"contacts\":\n        [\n            {\n                \"type\":\"number\",\n                \"value\":\"9111000263\"\n            }\n        ],\n        \"address\":[\n            {\n                \"type\":\"home\",\n                \"line1\":\"talwada deb \",\n                \"line2\":\"hello\",\n                \"city\":\"dewas\",\n                \"zip_code\":\"34323\",\n                \"state_code\":\"21\"\n            }\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/patients/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"patients",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
