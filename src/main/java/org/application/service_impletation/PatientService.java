@@ -1,7 +1,6 @@
 package org.application.service_impletation;
 
 import java.util.List;
-// Add the necessary dependency for javax.persistence
 import java.util.NoSuchElementException;
 import java.util.Optional;
 import org.application.entity.*;
@@ -25,7 +24,6 @@ public class PatientService {
   }
 
   public Patient getPatient(Long id) {
-    //
     Patient patient = patientRepository.findByIdOrThrow(id);
     return patient;
   }
