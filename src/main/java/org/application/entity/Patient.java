@@ -1,15 +1,8 @@
 package org.application.entity;
 
 import jakarta.persistence.*;
-
-//import local date
 import java.time.LocalDate;
-//import date formator
 import java.time.format.DateTimeFormatter;
-
-
-
-
 
 @Entity
 @Table(name = "Patient")
@@ -84,10 +77,6 @@ public class Patient {
     public void setGender(String gender) {
         this.gender = gender;
     }
-
-   
-
-    //declare void constructor
 
 
 }
