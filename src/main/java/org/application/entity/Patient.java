@@ -64,7 +64,6 @@ public class Patient {
     }
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
-        //convert date to time format dd-mm-yyyy    
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         String date = dateOfBirth.format(formatter);
         this.dateOfBirth = LocalDate.parse(date, formatter);
